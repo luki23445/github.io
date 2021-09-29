@@ -1,0 +1,234 @@
+html {
+  height: 100%;
+}
+body {
+  background: 
+    -webkit-linear-gradient(rgba(255,0,0,0.80), rgba(52,0,255,0.00) 80%),
+    -webkit-linear-gradient(-45deg, rgba(0,180,242,0.90) 25%, rgba(0,255,113,0.90) 76%);
+}
+.cf:before, .cf:after {
+  content:" ";
+  display: table;
+}
+.cf:after {
+  clear: both;
+}
+.cf {
+  *zoom: 1;
+}
+.menu {
+  list-style:none;
+  margin: 50px auto;
+  width: 800px;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+}
+.menu > li {
+  float: left;
+  position: relative;
+  -webkit-transform: skewX(25deg);
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.menu a {
+  display: block;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: Arial, Helvetica;
+  font-size: 14px;
+}
+.menu li:hover {
+  background: #e74c3c;
+}
+.menu > li > a {
+  -webkit-transform: skewX(-25deg);
+  padding: 1em 2em;
+}
+.submenu {
+  position: absolute;
+  width: 218px;
+  left: 30%;
+  margin-left: -100px;
+  -webkit-transform: skewX(-25deg);
+  -webkit-transform-origin: left top;
+}
+.submenu li {
+  position: relative;
+  overflow: hidden;
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.submenu > li > a {
+  padding: 1em 2em;
+}
+.submenu > li::after {
+  content:'';
+  position: absolute;
+  top: -125%;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 0 50px rgba(0, 0, 0, .9);
+}
+.submenu > li:nth-child(odd) {
+  -webkit-transform: skewX(-25deg) translateX(0);
+}
+.submenu > li:nth-child(odd) > a {
+  -webkit-transform: skewX(25deg);
+}
+.submenu > li:nth-child(odd)::after {
+  right: -50%;
+  -webkit-transform: skewX(-25deg) rotate(3deg);
+}
+.submenu > li:nth-child(even) {
+  -webkit-transform: skewX(25deg) translateX(0);
+}
+.submenu > li:nth-child(even) > a {
+  -webkit-transform: skewX(-25deg);
+}
+.submenu > li:nth-child(even)::after {
+  left: -50%;
+  -webkit-transform: skewX(25deg) rotate(3deg);
+}
+
+.submenu, .submenu li {
+  opacity: 0;
+  visibility: hidden;
+}
+.submenu li {
+  transition: .2s ease -webkit-transform;
+}
+.menu > li:hover .submenu, .menu > li:hover .submenu li {
+  opacity: 1;
+  visibility: visible;
+}
+.menu > li:hover .submenu li:nth-child(even) {
+  -webkit-transform: skewX(25deg) translateX(15px);
+}
+.menu > li:hover .submenu li:nth-child(odd) {
+  -webkit-transform: skewX(-25deg) translateX(-15px);
+}
+
+#container {
+  color:#FFFFFF;
+  text-transform: uppercase;
+  font-size:36px;
+  font-weight:bold;
+  padding-top:200px;  
+  position:fixed;
+  width:100%;
+  bottom:45%;
+  display:block;
+}
+
+#flip {
+  height:50px;
+  overflow:hidden;
+}
+
+#flip > div > div {
+  color:#fff;
+  padding:4px 12px;
+  height:45px;
+  margin-bottom:45px;
+  display:inline-block;
+}
+/* szybkość */
+#flip div:first-child {
+  animation: show 5s linear infinite;
+}
+/* ASUS */
+#flip div div {
+  background:#FF0000;
+/* MSI */
+}
+#flip div:first-child div {
+  background:#07FF00;
+/* GIGABYTE */
+}
+#flip div:last-child div {
+  background:#FFBE00;
+}
+
+@keyframes show {
+  0% {margin-top:-270px;}
+  5% {margin-top:-180px;}
+  33% {margin-top:-180px;}
+  38% {margin-top:-90px;}
+  66% {margin-top:-90px;}
+  71% {margin-top:0px;}
+  99.99% {margin-top:0px;}
+  100% {margin-top:-270px;}
+}
+
+
+.wrapper {
+  height: 420px;
+  width: 654px;
+  margin: 50px auto;
+  border-radius: 7px 7px 7px 7px;
+  -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+}
+
+.product-img {
+  margin-top: 14%;
+  margin-left: 25%;
+  height: 420px;
+  width: 327px;
+}
+
+.product-img img {
+  border-radius: 7px 0 0 7px;
+}
+
+.product-info {
+  margin-top: -420px;
+  margin-left: 44%;
+  height: 420px;
+  width: 327px;
+  border-radius: 0 7px 10px 7px;
+  background-color: #ffffff;
+}
+
+.product-text {
+  height: 300px;
+  width: 327px;
+}
+
+.product-text h1 {
+  margin: 0 0 0 38px;
+  padding-top: 52px;
+  font-size: 34px;
+  color: #474747;
+  margin-left: 45%;
+}
+
+.product-text h1,
+.product-price-btn p {
+  font-family: 'Bentham', serif;
+}
+
+.product-text h2 {
+  margin: 0 0 47px 38px;
+  font-size: 13px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #000000;
+  letter-spacing: 0.2em;
+  margin-left: 46%;
+}
+#iframe{
+	margin-top: 14%;
+}
